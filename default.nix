@@ -14,9 +14,14 @@ let
     vanguardCore = pkgs.haskellPackages.callPackage ./vanguard/vanguard-core.nix {};
   };
 
+  toolsets = import ./toolsets/toolsets.nix {};
+
   self = {
     haskellLibraries = haskellLibraries;
     vanguard = vanguard;
+    toolsets = toolsets;
   };
+
+
 in
 (pkgs // self)
