@@ -3,12 +3,20 @@
 let
   pkgs = import <nixpkgs> { inherit system; };
 
-
   callPackage = pkgs.lib.callPackageWith (pkgs // self);
 
-  self = {
+  haskellLibraries = {
     treeThreads = pkgs.haskellPackages.callPackage ./haskellPackages/tree-threads.nix {};
     concurrentStack = pkgs.haskellPackages.callPackage ./haskellPackages/concurrent-stack.nix {};
+  };
+
+  vanguard = {
+    vanguardCore = pkgs.haskellPackages.callPackage ./vanguard/vanguard-core.nix {};
+  };
+
+  self = {
+    haskellLibraries = haskellLibraries;
+    vanguard = vanguard;
   };
 in
 (pkgs // self)
