@@ -8,6 +8,7 @@ let
   haskellLibraries = {
     treeThreads = pkgs.haskellPackages.callPackage ./haskellPackages/tree-threads.nix {};
     concurrentStack = pkgs.haskellPackages.callPackage ./haskellPackages/concurrent-stack.nix {};
+    tyro = pkgs.haskellPackages.callPackage ./haskellPackages/tyro.nix {};
   };
 
   vanguard = {
