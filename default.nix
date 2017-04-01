@@ -6,8 +6,9 @@ let
   callPackage = pkgs.lib.callPackageWith (pkgs // self);
 
   haskellLibraries = {
-    treeThreads = pkgs.haskellPackages.callPackage ./haskellPackages/tree-threads.nix {};
     concurrentStack = pkgs.haskellPackages.callPackage ./haskellPackages/concurrent-stack.nix {};
+    haskellEtcd = pkgs.haskellPackages.callPackage ./haskellPackages/haskell-etcd.nix {};
+    treeThreads = pkgs.haskellPackages.callPackage ./haskellPackages/tree-threads.nix {};
     tyro = pkgs.haskellPackages.callPackage ./haskellPackages/tyro.nix {};
   };
 
