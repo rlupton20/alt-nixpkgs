@@ -8,8 +8,8 @@ mkDerivation {
   src = fetchFromGitHub {
     owner = "rlupton20";
     repo = "haskell-etcd";
-    rev = "e331cf5c3c7fdc15620aa15df04d8bcd8e705856";
-    sha256 = "0pkc8sjcbs1jaybxnsb09iiha1gpxgbsxzm5ddbrn49inbk87914";
+    rev = "a6d78e482a3f8e7f144eb329b3cf22c00b4ee065";
+    sha256 = "17yx3cgvrzbl0rjy1j7h9dy0avg0728zr5nk50llbrs0sw658ncl";
   };
   libraryHaskellDepends = [
     aeson base bytestring data-default exceptions free http-conduit
