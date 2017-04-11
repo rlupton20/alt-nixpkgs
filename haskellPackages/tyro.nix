@@ -1,5 +1,5 @@
 { mkDerivation, fetchFromGitHub, aeson, base, HUnit, protolude, singletons, stdenv
-, test-framework, test-framework-hunit, text
+, test-framework, test-framework-hunit, text, reflection
 }:
 mkDerivation {
   pname = "tyro";
@@ -7,10 +7,10 @@ mkDerivation {
   src = fetchFromGitHub { 
     owner = "rlupton20";
     repo = "tyro";
-    rev = "v0.1.1";
-    sha256 = "14pk5qmmlwfby5fqnwyj9pyy22sffq8vd5kkp4sma2vyqn6vv2hl";
+    rev = "v0.2";
+    sha256 = "006lhb44dh0pv4f95141sfk0dvr7xwk4ggmp45i7hdsf8cnlridp";
   };
-  libraryHaskellDepends = [ aeson base protolude singletons text ];
+  libraryHaskellDepends = [ aeson base protolude singletons text reflection ];
   testHaskellDepends = [
     aeson base HUnit protolude test-framework test-framework-hunit text
   ];
