@@ -2,6 +2,7 @@
 
 let
   pkgs = import <nixpkgs> { inherit system; };
+  unstable = import (builtins.fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz) {};
 
   callPackage = pkgs.lib.callPackageWith (pkgs // self);
 
@@ -18,10 +19,15 @@ let
 
   toolsets = import ./toolsets/toolsets.nix {};
 
+  miniTools = {
+    csv = unstable.lib.callPackagesWith (unstable //self) ./miniTools/csv.nix {};
+  };
+
   self = {
     haskellLibraries = haskellLibraries;
     vanguard = vanguard;
     toolsets = toolsets;
+    miniTools = miniTools;
   };
 
 
