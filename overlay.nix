@@ -18,10 +18,12 @@ let
     csv = unstable.lib.callPackagesWith (unstable // self) ./miniTools/csv.nix {};
   };
 
-  allPackages.obelisk = {
+  obelisk = {
     haskellLibraries = haskellLibraries;
     vanguard = vanguard;
     miniTools = miniTools;
   };
 in 
-allPackages
+{ 
+  obelisk = obelisk; 
+}
