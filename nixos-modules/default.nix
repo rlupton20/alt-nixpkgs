@@ -1,0 +1,3 @@
+{
+  libre = import ./libre.nix;
+}

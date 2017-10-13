@@ -18,10 +18,19 @@ let
     csv = unstable.lib.callPackagesWith (unstable // self) ./miniTools/csv.nix {};
   };
 
+  # NixOS modules
+  nixos = {
+    modules = import ./nixos-modules;
+  };
+
   obelisk = {
+    # Packages
     haskellLibraries = haskellLibraries;
     vanguard = vanguard;
     miniTools = miniTools;
+
+    # NixOS modules
+    nixos = nixos;
   };
 in 
 { 
